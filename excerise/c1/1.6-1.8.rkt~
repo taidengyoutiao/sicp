@@ -1,0 +1,14 @@
+#lang racket
+; newton's methods for square root
+
+; write code from top to bottom
+
+; step1: Knowing what/how to do in each step. Find the patterns/rules.
+; step2: write the "description" in natural language about the rules in step1.
+; step3: translate the "description" into programming lauguage which is the "program"
+; sometimes, step2 is omitted.
+
+(define (sq guess x)
+  (if (good-enough? guess x)
+      x
+      (sq (improve guess x) x)))
