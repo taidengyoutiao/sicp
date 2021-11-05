@@ -15,7 +15,21 @@
 ; write code from top to bottom
 ; start from the arguments and function name/meaning
 
-(define (sq guess x)
-  (if (good-enough? guess x)
-      x
-      (sq (improve guess x) x)))
+;(define (sq guess x)
+  ;(if (good-enough? guess x)
+      ;x
+      ;(sq (improve guess x) x)))
+
+; to-do: 1.6
+
+; 1.7
+(define (abs x) (if (< x 0)
+                    (- x) x))
+(define (square x)
+  (* x x))
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
+(define (good-enough?* guess old-guess)
+  (< (/ (abs (- guess old-guess)) guess) 0.001))
+
+(good-enough?* 100 100)
